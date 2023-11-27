@@ -1,0 +1,83 @@
+root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  max-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+table {
+  width: 80%;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  padding: 24px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  text-align: left;
+  padding-left: 24px;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+.status-badge {
+  max-width: 100px;
+  height: 30px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.status-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.status-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.status-error {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.status-info {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.tr-head {
+  background-color: rgb(174, 161, 161);
+}
+
+#table-body {
+  background-color: rgba(87, 100, 130, 0.669);
+}
