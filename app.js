@@ -3,14 +3,8 @@ const tableBodyNode = document.querySelector("#table-body");
 const ordersPromise = fetch("http://116.203.151.6:3000/orders");
 const productsPromise = fetch("http://116.203.151.6:3000/products");
 
-const [ordersResponde, productsResponse] = await Promise.all([
-  ordersPromise,
-  productsPromise,
-]);
-const [orders, products] = await Promise.all([
-  ordersResponde.jason(),
-  productsResponse.jason(),
-]);
+const [ordersResponde, productsResponse] = await Promise.all([ordersPromise, productsPromise]);
+const [orders, products] = await Promise.all([ordersResponde.jason(), productsResponse.jason()]);
 console.log(products);
 
 function buildOrderList(orders) {
