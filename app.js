@@ -10,9 +10,15 @@ const currencyToSymbol = {
 };
 
 const tableBodyNode = document.querySelector("#table-body");
+const newOderForm = document.querySelector("#new-order-form");
+const addProductBtn = document.querySelector("#add-product");
 
-const ordersPromise = fetch("http://116.203.151.6:3000/orders");
-const productsPromise = fetch("http://116.203.151.6:3000/products");
+
+
+
+const ordersPromise = fecth ("http://116.203.151.6:3000/orders")
+
+const productsPromise = fecth ("http://116.203.151.6:3000/products");
 
 const [ordersResponde, productsResponse] = await Promise.all([ordersPromise, productsPromise]);
 const [orders, products] = await Promise.all([ordersResponde.jason(), productsResponse.jason()]);
@@ -50,10 +56,36 @@ function buildOrderList(orders) {
     tr.appendChild(state);
     tr.appendChild(product);
 
-    tableBodyNode.appendChild(tr);
+    tableBodyNode.appendChild(tr); 
+    addProductBtn.addEventListener('click', ()=>{
+      const productSlector=document.createElement('select');
+      const productQuantity = document.createElement('input');
 
-    if (order.status === "draft") {
-      state.style.backgroundColor = "#2196f3";
+      productSlector.setAttribute('name', 'order-products');
+
+      for (const product of products) {
+        const productOption = document.createElement('option');
+        productOption.textContent= product.name;
+        productOption.value= product.name
+
+        
+      }
+    }
+    )
+
+    newOrderForm.addEventListener('submit',(event) => {
+     event.preventDefault();
+
+   const form = new FormData (newOrderForm)
+   const orderCurrency = form.get('order-currency');
+   const orderProduct = form.getAll('order-product');
+   const body = JSON.stringify({ orderCurrency})
+
+
+   fecth ("https://116.203.151.6:3000/orders", {method: 'POST', body})}
+
+    if (order.status ==="draft") {
+    state.style.backgroundColor = "#2196f3";
     }
     if (order.status === "processing") {
       state.style.backgroundColor = "#ffc107";
