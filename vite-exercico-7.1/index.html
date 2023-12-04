@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+    <body>
+      <h1>As minhas encomendas</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Estado</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+        <tfoot>
+          <tr>
+            <td id="total-orders"> 10 encomendas</td>
+            <td></td>
+            <td id="total-price"> Total:  $ 100</td>
+          </tr>
+        </tfoot>
+      </table>
+      <form id="new-order-form">
+        <select name="order-currency">
+          <option value="EUR">"€" </option>
+          <option value="USD">"$"</option>
+          <option value="GBP">"£"</option>
+        </select>
+        <div id="order-products-forms"> OS meus Produtos</div>
+        <button type="button" id="add-product">Adcionar Produto</button>
+        <button type="submit">Criar Encomenda</button>
+      </form>
+      <script type="module" src="./main.js"></script>
+    </body>
+  </html>
